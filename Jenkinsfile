@@ -13,5 +13,13 @@ pipeline {
             }
         }
 
+        stage('SonarQube Scan') {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
+
     }
 }
