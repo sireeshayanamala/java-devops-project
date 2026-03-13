@@ -35,7 +35,7 @@ pipeline {
 
         stage('Trivy Scan') {
             steps {
-                bat 'D:\\trivy\\trivy.exe image sireesha/java-devops-project:latest'
+                bat 'D:\\trivy.exe image sireesha/java-devops-project:latest'
             }
         }
 
