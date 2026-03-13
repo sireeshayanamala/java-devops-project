@@ -3,9 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Build Application') {
             steps {
-                git 'https://github.com/sireeshayanamala/java-devops-project.git'
+                bat 'mvn clean package'
             }
         }
 
