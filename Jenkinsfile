@@ -15,7 +15,7 @@ pipeline {
 
         stage('SonarQube Scan') {
             steps {
-                withSonarQubeEnv('Sonarqube') {
+                withSonarQubeEnv('SonarQube') {
                     bat 'mvn sonar:sonar'
                 }
             }
@@ -24,6 +24,18 @@ pipeline {
         stage('Docker Build') {
             steps {
                 bat 'docker build -t java-devops-project .'
+            }
+        }
+
+        stage('Docker Tag') {
+            steps {
+                bat 'docker tag java-devops-project sireesha/java-devops-project:latest'
+            }
+        }
+
+        stage('Trivy Scan') {
+            steps {
+                bat 'trivy image sireesha/java-devops-project:latest'
             }
         }
 
