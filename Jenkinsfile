@@ -21,5 +21,11 @@ pipeline {
             }
         }
 
+        stage('Docker Build') {
+            steps {
+                bat 'docker build -t java-devops-project .'
+            }
+        }
+
     }
 }
