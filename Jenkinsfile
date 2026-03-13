@@ -29,13 +29,13 @@ pipeline {
 
         stage('Docker Tag') {
             steps {
-                bat 'docker tag java-devops-project sirireddyyanamala/java-devops-project:v1'
+                bat 'docker tag java-devops-project sirireddyyanamala/java-devops-project:v2'
             }
         }
 
         stage('Trivy Scan') {
             steps {
-                bat 'D:\\trivy.exe image --timeout 10m sirireddyyanamala/java-devops-project:v1'
+                bat 'D:\\trivy.exe image --timeout 10m sirireddyyanamala/java-devops-project:v2'
             }
         }
 
@@ -53,7 +53,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                bat 'docker push sirireddyyanamala/java-devops-project:v1'
+                bat 'docker push sirireddyyanamala/java-devops-project:v2'
             }
         }
 
