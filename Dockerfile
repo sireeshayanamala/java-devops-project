@@ -1,7 +1,9 @@
 # ---------- Stage 1 : Build the application ----------
 FROM maven:3.9.9-eclipse-temurin-17 AS build
 
-WORKDIR /app --inside container it creates /app
+##inside container it creates /app
+
+WORKDIR /app 
 
 # Copy project files
 COPY pom.xml .
