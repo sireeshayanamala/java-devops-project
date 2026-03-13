@@ -29,7 +29,7 @@ pipeline {
 
         stage('Docker Tag') {
             steps {
-                bat 'docker tag java-devops-project sirireddyyanamala/java-devops-project:v%BUILD_NUMBER%}'
+                bat 'docker tag java-devops-project sirireddyyanamala/java-devops-project:v%BUILD_NUMBER%'
             }
         }
 
